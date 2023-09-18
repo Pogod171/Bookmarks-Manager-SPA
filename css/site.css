@@ -136,8 +136,16 @@
     color: black;
 }
 
+.BookmarkUrl{
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: black;
+}
+
 .BookmarkCategorie{
-    color: blue;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: black;
 }
 
 .BookmarkCommandPanel {
@@ -166,7 +174,7 @@
 
 @media screen and (min-width:650px) {
 
-    .contactLayout {
+    .BookmarkLayout {
         grid-template-columns: repeat(3, 30%);
     }
 }
