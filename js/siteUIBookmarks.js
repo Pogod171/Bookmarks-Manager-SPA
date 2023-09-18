@@ -58,7 +58,7 @@ async function renderBookmarks(categorie = "") {
   eraseContent();
   if (Bookmarks !== null) {
     Bookmarks.forEach((Bookmark) => {
-      if(Bookmark.Categorie == categorie || categorie == ""){
+      if (Bookmark.Categorie == categorie || categorie == "") {
         $("#content").append(renderBookmark(Bookmark));
       }
     });
@@ -172,9 +172,12 @@ function renderBookmarkForm(Bookmark = null) {
   $("#actionTitle").text(create ? "Création" : "Modification");
   $("#content").append(`
         <form class="form" id="BookmarkForm">
-            <input type="hidden" name="Id" value="${Bookmark.Id}"/>
-
-            <label for="Name" class="form-label">Nom </label>
+        <div class="big-favicon" style="background-image: url('http://www.google.com/s2/favicons?sz=64&domain=${Bookmark.Url}');">
+                        </div>  
+        <br>  
+        <input type="hidden" name="Id" value="${Bookmark.Id}"/>
+            
+            <label for="Name" class="form-label BookmarkName">Titre </label>
             <input 
                 class="form-control Alpha"
                 name="Name" 
@@ -185,7 +188,7 @@ function renderBookmarkForm(Bookmark = null) {
                 InvalidMessage="Le nom comporte un caractère illégal" 
                 value="${Bookmark.Name}"
             />
-            <label for="Url" class="form-label">Url </label>
+            <label for="Url" class="form-label BookmarkUrl">Url </label>
             <input 
                 class="form-control URL"
                 name="Url" 
@@ -196,7 +199,7 @@ function renderBookmarkForm(Bookmark = null) {
                 InvalidMessage="Le lien comporte un caractère illégal" 
                 value="${Bookmark.Url}"
             />
-            <label for="Categorie" class="form-label">Catégorie </label>
+            <label for="Categorie" class="form-label BookmarkCategorie">Catégorie </label>
             <input 
                 class="form-control"
                 name="Categorie"
